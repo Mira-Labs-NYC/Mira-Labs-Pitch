@@ -1,243 +1,70 @@
 import type { SlideDefinition } from '../types/slides';
 
+const roles = [
+  {
+    name: 'Matwal LTD',
+    title: 'Investment Manager institucional',
+    bullets: [
+      'Plataforma multi-estrategia con presencia Londres / Nueva York / Singapur',
+      'Gobernanza, compliance y relación con LPs institucionales',
+      'Experiencia estructurando SPVs en BVI / Lux y ejecutando comités de riesgo'
+    ]
+  },
+  {
+    name: 'MiraLabs',
+    title: 'Tecnología, treasury & risk engine',
+    bullets: [
+      'Control de flujos vía control accounts / escrow, dashboards diarios y alertas de KPIs operativos',
+      'Automatización de reporting mensual y auditoría externa anual',
+      'Infraestructura opcional de tokenización para LPs digitales y seguimiento de offtakers'
+    ]
+  },
+  {
+    name: 'M&N Minería',
+    title: 'Operating Partner (minerales críticos)',
+    bullets: [
+      '10+ años operando antimonio, grafito y metales asociados',
+      'Reservas en jurisdicciones pro-aliados con permisos vigentes y equipos instalados',
+      'Pipeline de expansión inmediata basada en CAPEX incremental y offtakes ya discutidos'
+    ]
+  }
+];
+
 export const Slide04LeadershipTeam = {
   type: 'content',
-  title: 'Leadership Team',
-  subtitle: 'Institutional pedigree with complementary expertise across finance, technology, and growth',
+  title: 'Equipo y governance',
+  subtitle: 'Roles claros para cumplir requisitos institucionales de defensa',
   content: (
     <div className="space-y-8">
-      <div className="grid grid-cols-2 gap-8 text-sm md:text-base">
-        <div className="border border-slate-200 p-6">
-          <div className="flex items-start gap-4 mb-4 pb-4 border-b border-slate-200">
-            <div className="w-16 h-16 bg-slate-900 text-white flex items-center justify-center text-xl font-light">
-              JH
-            </div>
-            <div className="flex-1">
-              <h3 className="font-semibold text-slate-900">Jason Hutchinson</h3>
-              <div className="text-sm text-slate-600 uppercase tracking-wide">Chief Investment Analyst & Portfolio Manager</div>
-            </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {roles.map((role) => (
+          <div key={role.name} className="border border-slate-200 bg-white p-6">
+            <div className="text-xs uppercase tracking-wide text-slate-500 mb-2">{role.title}</div>
+            <div className="text-2xl font-light text-slate-900 mb-4">{role.name}</div>
+            <ul className="space-y-3 text-sm text-slate-700">
+              {role.bullets.map((item) => (
+                <li key={item}>• {item}</li>
+              ))}
+            </ul>
           </div>
-          <div className="space-y-3 text-base text-slate-700">
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Current Role</div>
-              <div>Portfolio Manager, Sector Analysts (RIA, $300M AUM) | Head of Investments, Mira Labs</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Expertise</div>
-              <div>Algorithmic trading (2012-2020), quantitative strategy design, project finance ($100M-$5B), digital asset risk management</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Education & Credentials</div>
-              <div>Former Series 7/65 (reinstatement in process for FINMA approval), CAIA Charterholder, B.S. Finance (University of Vermont)</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Key Achievements</div>
-              <div>8+ years managing $300M discretionary portfolios; developed proprietary MT4/MQL4 systems; led Swiss fund partnerships across infrastructure and biotech sectors</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="border border-slate-200 p-6">
-          <div className="flex items-start gap-4 mb-4 pb-4 border-b border-slate-200">
-            <div className="w-16 h-16 bg-slate-900 text-white flex items-center justify-center text-xl font-light">
-              SD
-            </div>
-            <div className="flex-1">
-              <h3 className="font-semibold text-slate-900">Sean Demosthenous</h3>
-              <div className="text-sm text-slate-600 uppercase tracking-wide">Chief Business Development Officer</div>
-            </div>
-          </div>
-          <div className="space-y-3 text-base text-slate-700">
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Current Role</div>
-              <div>Partner, Emira Trade Desk (Energy Trading) | Chief Business Development Officer, Mira Labs</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Expertise</div>
-              <div>Credit derivatives, structured products, institutional partnerships, cross-border financing, SBLC-backed energy trade flows</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Career Highlights</div>
-              <div>Tullett Prebon (TP ICAP) 2010-2018, BGC Partners 2018-2020, Lloyd's of London 2006-2009</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Key Achievements</div>
-              <div>Brokered $10B+ CDS contracts as top-decile broker; built 200+ HNWI/family office network; scaled Zeebu to 60+ countries; founded DVerse (blockchain advisory)</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="border border-slate-200 p-6">
-          <div className="flex items-start gap-4 mb-4 pb-4 border-b border-slate-200">
-            <div className="w-16 h-16 bg-slate-900 text-white flex items-center justify-center text-xl font-light">
-              AA
-            </div>
-            <div className="flex-1">
-              <h3 className="font-semibold text-slate-900">Amik Ahmad</h3>
-              <div className="text-sm text-slate-600 uppercase tracking-wide">Chief Product Officer</div>
-            </div>
-          </div>
-          <div className="space-y-3 text-base text-slate-700">
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Current Role</div>
-              <div>Chief Product Officer, Mira Labs (2025–present); Former Head of Product, Autonomys Labs (2024-2025)</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Expertise</div>
-              <div>AI/Web3 Product Strategy, DePIN, DeFi, Agentic Systems, UX/Product Design, Blockchain Infrastructure</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Career Highlights</div>
-              <div>Launched L1 Protocol (Head of Product - $415M FDV); Kresus Labs (Head of Product - launched MPC wallet partnering with Worldcoin, Sotheby's, and Chrisitie's); One Medical Group (Director of Product - led $65M raise to establish clear path to profitability pre-IPO); Amazon (Senior Manager UXE - Launched AI foundation models, collaborated with US DoD); Medistem Laboratories (Product Advisor, acquired by Intrexon for $26M in 2013).</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Key Achievements</div>
-              <div>Co-founded Amazon Blockchain Group; Adjunct Advisor, SVA - Red Dot Design Award Winner; One Medical - awarded "Most Innovative Healthtech Company" globally ahead of Apple; Guided Medistem through $26M Intrexon exit; 90% of American's use a product daily that he designed.</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="border border-slate-200 p-6">
-          <div className="flex items-start gap-4 mb-4 pb-4 border-b border-slate-200">
-            <div className="w-16 h-16 bg-slate-900 text-white flex items-center justify-center text-xl font-light">
-              ZR
-            </div>
-            <div className="flex-1">
-              <h3 className="font-semibold text-slate-900">Zuhayr Reaz</h3>
-              <div className="text-sm text-slate-600 uppercase tracking-wide">Chief Growth Officer</div>
-            </div>
-          </div>
-          <div className="space-y-3 text-base text-slate-700">
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Current Role</div>
-              <div>Chief Growth Officer, Mira Labs; Growth Consultant, Multiple Crypto Projects | Former Strategic Partnerships Lead, Zeebu</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Expertise</div>
-              <div>Strategic Partnerships, Business Development, Tokenomics, GTM Strategy, DeFi/Web3 Ecosystem Growth</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Education</div>
-              <div>Johnson Cornell MBA (Finance & Strategy), Duke University (MEng, Financial Technology), Bates College (BS, Economics & Mathematics)</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900 mb-1">Key Achievements</div>
-              <div>Grew Zeebu TVL from $26M to $94M (3.6x) through strategic partnerships (65%) and organic user expansion (35%); led ecosystem growth at $36B crypto exchange; deployed $11M across 200 projects</div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
 
-      <div className="bg-slate-900 text-white p-6">
-        <div className="grid grid-cols-4 gap-8 text-center">
+      <div className="border border-slate-200 p-6">
+        <div className="text-sm uppercase tracking-wide text-slate-600 font-semibold mb-3">Comités y controles</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-slate-700">
           <div>
-            <div className="text-2xl font-light mb-1">$10B+</div>
-            <div className="text-sm text-slate-400 uppercase tracking-wide">CDS Contracts Brokered</div>
-          </div>
-          <div>
-            <div className="text-2xl font-light mb-1">$300M</div>
-            <div className="text-sm text-slate-400 uppercase tracking-wide">Current AUM Managed</div>
+            <div className="font-semibold text-slate-900 mb-1">Comité Operativo</div>
+            <p>Seguimiento diario a producción, CAPEX y KPIs de planta; reportado en dashboard MiraLabs.</p>
           </div>
           <div>
-            <div className="text-2xl font-light mb-1">3.6x</div>
-            <div className="text-sm text-slate-400 uppercase tracking-wide">TVL Growth (Zeebu)</div>
+            <div className="font-semibold text-slate-900 mb-1">Comité Financiero</div>
+            <p>Asignaciones por tramo, control de cuentas escrow y liberación contra hitos.</p>
           </div>
           <div>
-            <div className="text-2xl font-light mb-1">15+</div>
-            <div className="text-sm text-slate-400 uppercase tracking-wide">Years Combined Finance Experience</div>
+            <div className="font-semibold text-slate-900 mb-1">Comité de Riesgo</div>
+            <p>Monitor geopolítico, cobertura de precios y actualización de offtakes; incluye asesor externo.</p>
           </div>
-        </div>
-      </div>
-
-      <div className="border-t border-slate-200 pt-6">
-        <h3 className="text-base font-semibold text-slate-900 mb-4 uppercase tracking-wide">Advisory Board</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-xs md:text-sm">
-          <div className="bg-slate-50 border border-slate-200 p-4 rounded">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 bg-slate-300 text-white flex items-center justify-center text-xs font-light rounded">
-                TBD
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-slate-900 text-sm">Financial Services Advisor</div>
-              </div>
-            </div>
-            <div className="text-xs text-slate-600">
-              <span className="font-medium">Expertise:</span> Swiss regulatory compliance, FINMA relations, institutional asset management
-            </div>
-          </div>
-
-          <div className="bg-slate-50 border border-slate-200 p-4 rounded">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 bg-slate-300 text-white flex items-center justify-center text-xs font-light rounded">
-                TBD
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-slate-900 text-sm">Blockchain Technology Advisor</div>
-              </div>
-            </div>
-            <div className="text-xs text-slate-600">
-              <span className="font-medium">Expertise:</span> DeFi protocol architecture, smart contract security, Web3 infrastructure
-            </div>
-          </div>
-
-          <div className="bg-slate-50 border border-slate-200 p-4 rounded">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 bg-slate-300 text-white flex items-center justify-center text-xs font-light rounded">
-                TBD
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-slate-900 text-sm">Quantitative Trading Advisor</div>
-              </div>
-            </div>
-            <div className="text-xs text-slate-600">
-              <span className="font-medium">Expertise:</span> HFT strategies, algorithmic trading systems, risk management frameworks
-            </div>
-          </div>
-
-          <div className="bg-slate-50 border border-slate-200 p-4 rounded">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 bg-slate-300 text-white flex items-center justify-center text-xs font-light rounded">
-                TBD
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-slate-900 text-sm">Legal & Compliance Advisor</div>
-              </div>
-            </div>
-            <div className="text-xs text-slate-600">
-              <span className="font-medium">Expertise:</span> Cross-border digital asset regulation, securities law, AML/KYC compliance
-            </div>
-          </div>
-
-          <div className="bg-slate-50 border border-slate-200 p-4 rounded">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 bg-slate-300 text-white flex items-center justify-center text-xs font-light rounded">
-                TBD
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-slate-900 text-sm">Institutional Sales Advisor</div>
-              </div>
-            </div>
-            <div className="text-xs text-slate-600">
-              <span className="font-medium">Expertise:</span> Family office relations, alternative investment distribution, investor relations
-            </div>
-          </div>
-
-          <div className="bg-slate-50 border border-slate-200 p-4 rounded">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 bg-slate-300 text-white flex items-center justify-center text-xs font-light rounded">
-                TBD
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-slate-900 text-sm">Product & Growth Advisor</div>
-              </div>
-            </div>
-            <div className="text-xs text-slate-600">
-              <span className="font-medium">Expertise:</span> FinTech product strategy, go-to-market execution, user acquisition
-            </div>
-          </div>
-        </div>
-        <div className="mt-4 text-xs text-slate-500 italic">
-          Advisory board positions are currently being filled with industry leaders across finance, blockchain, and regulatory domains to ensure strategic guidance and market credibility.
         </div>
       </div>
     </div>

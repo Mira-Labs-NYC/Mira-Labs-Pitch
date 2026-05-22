@@ -1,125 +1,36 @@
-import { Building2, Briefcase, Lock, ArrowLeftRight } from 'lucide-react';
 import type { SlideDefinition } from '../types/slides';
 
+const risks = [
+  { risk: 'Operativo', mitigation: 'Auditoría de reservas, telemetría de maquinaria, KPIs diarios y soporte on-site de MiraLabs + supervisión Matwal.' },
+  { risk: 'Mercado / precio', mitigation: 'Contratos forward con offtakers vinculados al DOD, cobertura selectiva y diversificación multimetal.' },
+  { risk: 'Regulatorio / permisos', mitigation: 'Permisos vigentes verificados, clean legal opinion, SPV offshore compliant y asesoría local.' },
+  { risk: 'Geopolítico', mitigation: 'Alineación explícita con agenda DOD y supply de aliados; múltiples compradores y respaldo de programas internacionales.' },
+  { risk: 'Gestión & governance', mitigation: 'Comités con voto cruzado, reporting mensual, auditoría anual y sustitución inmediata si KPIs se desvían.' }
+];
+
 export const Slide08PlatformBusinessModel = {
-  type: 'content' as const,
-  title: 'Platform Business Model',
-  subtitle: 'Future revenue optionality once regulatory platform scales (not in base case)',
+  type: 'content',
+  title: 'Riesgos y mitigantes',
+  subtitle: 'Estructura alineada a estándares de defensa y banca institucional',
   content: (
-    <div className="space-y-6 text-sm md:text-base">
-      <div className="border border-blue-200 bg-blue-50 p-4">
-        <div className="text-sm uppercase tracking-wide text-blue-700 font-semibold mb-1">
-          Future Revenue Optionality
-        </div>
-        <p className="text-base text-blue-900 leading-relaxed">
-          Core projections (Slide 6) consider only asset management fees. The Luxembourg platform unlocks incremental revenue beginning in Year 2 once the regulatory transfer is complete, the $72M (~CHF 60M) AUM base is stabilized, and pilot compartments are validated. Additional optionality includes Digital Asset Tokenization (DATs) to bridge TradFi and crypto markets—bringing crypto products to traditional allocators and TradFi products to digital asset holders via regulated, exchange-listed vehicles.
-        </p>
+    <div className="space-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {risks.map((item) => (
+          <div key={item.risk} className="border border-slate-200 p-6 bg-white">
+            <div className="text-xs uppercase tracking-wide text-slate-500 mb-2">{item.risk}</div>
+            <p className="text-sm text-slate-700">{item.mitigation}</p>
+          </div>
+        ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
-        <div className="border border-slate-200 p-4 bg-slate-50 space-y-3">
-          <div className="flex items-center gap-3 mb-4">
-            <Building2 className="text-blue-600" size={24} />
-            <h3 className="text-base font-semibold uppercase tracking-wide text-slate-900">Core Asset Management</h3>
-          </div>
-          <ul className="space-y-2 text-base text-slate-700 leading-relaxed">
-            <li><span className="font-semibold">Model:</span> 1.5% management fee + 35% performance fee on proprietary AUM.</li>
-            <li><span className="font-semibold">Run-rate:</span> $72M AUM → $1.0-1.3M Day 1 recurring fees.</li>
-            <li><span className="font-semibold">Focus:</span> Convert $20-30M LOIs and lock a 12-month audited track record.</li>
-          </ul>
-        </div>
-
-        <div className="border border-slate-200 p-4 space-y-3">
-          <div className="flex items-center gap-3 mb-4">
-            <Briefcase className="text-purple-600" size={24} />
-            <h3 className="text-base font-semibold uppercase tracking-wide text-slate-900">Platform Services (Year 2+)</h3>
-          </div>
-          <ul className="space-y-2 text-base text-slate-700 leading-relaxed">
-            <li><span className="font-semibold">Model:</span> 0.25-0.75% platform fee per compartment (70%+ margin profile).</li>
-            <li><span className="font-semibold">Capacity:</span> 400+ CSSF-approved compartments for external managers.</li>
-            <li><span className="font-semibold">2027 Target:</span> 5-7 managers, $120-180M AUM → $0.3-0.5M incremental revenue.</li>
-          </ul>
-        </div>
-
-        <div className="border border-slate-200 p-4 space-y-3">
-          <div className="flex items-center gap-3 mb-4">
-            <Lock className="text-green-600" size={24} />
-            <h3 className="text-base font-semibold uppercase tracking-wide text-slate-900">Advisory & Integration</h3>
-          </div>
-          <ul className="space-y-2 text-base text-slate-700 leading-relaxed">
-            <li><span className="font-semibold">Model:</span> $50-150K setup + $2-5K/month retainer (custody, compliance, reporting).</li>
-            <li><span className="font-semibold">Clients:</span> Family offices, RIAs, and digital asset funds seeking regulated infrastructure.</li>
-            <li><span className="font-semibold">Goal:</span> Accelerate onboarding and deepen cross-sell relationships.</li>
-          </ul>
-        </div>
-
-        <div className="border border-slate-200 p-4 space-y-3">
-          <div className="flex items-center gap-3 mb-4">
-            <ArrowLeftRight className="text-orange-600" size={24} />
-            <h3 className="text-base font-semibold uppercase tracking-wide text-slate-900">Digital Asset Tokenization</h3>
-          </div>
-          <ul className="space-y-2 text-base text-slate-700 leading-relaxed">
-            <li><span className="font-semibold">Bridge Strategy:</span> Crypto products to TradFi (exchange-listed DATs) and TradFi products to crypto holders (tokenized securities).</li>
-            <li><span className="font-semibold">Revenue:</span> 1.5% mgmt fee + 0.5% issuance + transaction fees on secondary trading.</li>
-            <li><span className="font-semibold">Path:</span> SPAC/public listing (2026-27) enables institutional liquidity and regulatory credibility for cross-market product distribution.</li>
-          </ul>
-        </div>
+      <div className="border border-blue-200 bg-blue-50 p-6">
+        <div className="text-sm uppercase tracking-wide text-blue-700 font-semibold mb-2">Infraestructura de control</div>
+        <ul className="space-y-2 text-slate-800 text-sm">
+          <li>• Dashboards MiraLabs enlazados con sensores IoT y sistemas contables para mostrar producción, inventarios y cash en tiempo real.</li>
+          <li>• Control account / escrow con doble firma y reconciliación automática.</li>
+          <li>• Auditoría externa anual + revisiones trimestrales de KPIs críticos.</li>
+        </ul>
       </div>
-
-      <div className="border border-slate-200">
-        <div className="bg-slate-50 p-4 border-b border-slate-200">
-          <h3 className="text-base font-semibold uppercase tracking-wide text-slate-900">Commercial Validation Roadmap</h3>
-        </div>
-        <div className="p-5 grid grid-cols-1 lg:grid-cols-3 gap-4 text-base text-slate-700 leading-relaxed">
-          <div>
-            <div className="font-semibold text-slate-900 mb-1">Milestones</div>
-            <ul className="space-y-1.5">
-              <li>• Q3 2026: Launch 3 pilot compartments with allocators (&gt;$5M each).</li>
-              <li>• Q4 2026: Onboard first external manager under revenue-share.</li>
-              <li>• Q1 2027: Publish audited performance and institutional DD pack.</li>
-            </ul>
-          </div>
-          <div>
-            <div className="font-semibold text-slate-900 mb-1">Success Metrics</div>
-            <ul className="space-y-1.5">
-              <li>• 70%+ retention after 12 months.</li>
-              <li>• Platform fees = 15-20% of total revenue by Year 3.</li>
-              <li>• Compartment launch cycle &lt; 8 weeks.</li>
-            </ul>
-          </div>
-          <div>
-            <div className="font-semibold text-slate-900 mb-1">Dependencies</div>
-            <ul className="space-y-1.5">
-              <li>• FINMA change-of-control approval plus banking consents.</li>
-              <li>• CSSF notifications for compartment transfers and onboarding.</li>
-              <li>• Pre-aligned provider network (admin/audit/legal) ready to execute.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="border border-slate-200">
-        <div className="bg-slate-50 p-4 border-b border-slate-200">
-          <h3 className="text-base font-semibold uppercase tracking-wide text-slate-900">Key Risks & Mitigations</h3>
-        </div>
-        <div className="p-5 grid grid-cols-1 lg:grid-cols-2 gap-4 text-base text-slate-700 leading-relaxed">
-          <div>
-            <div className="font-semibold text-slate-900 mb-1">Client Adoption</div>
-            <p>Mitigation: Leverage existing $72M (~CHF 60M) relationships, offer introductory rebates, and deploy dedicated onboarding support.</p>
-          </div>
-          <div>
-            <div className="font-semibold text-slate-900 mb-1">Operational Complexity</div>
-            <p>Mitigation: Standardize legal/compliance templates, pre-approve CSSF vendor stack, and automate reporting prior to scaling.</p>
-          </div>
-        </div>
-      </div>
-
-      <p className="text-sm text-slate-500">
-        Timing and magnitude of these revenues depend on regulatory transfer completion, pilot compartment performance, and Series A capital.
-      </p>
-      <p className="text-sm text-slate-500">
-        Sources: Internal projections; CSSF guidance; benchmarks from Swiss institutional platforms (2024-2025).
-      </p>
     </div>
   )
 } satisfies SlideDefinition;

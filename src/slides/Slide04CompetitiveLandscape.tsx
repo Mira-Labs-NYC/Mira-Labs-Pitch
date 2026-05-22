@@ -1,107 +1,107 @@
 import type { SlideDefinition } from '../types/slides';
 
+const minerals = [
+  {
+    name: 'Antimonio',
+    use: 'Municiones, retardantes, baterías militares',
+    dependency: '70%+ supply controlado por China',
+    dod: 'Contrato US$245M (US Antimony Corp) y orden de compra continua'
+  },
+  {
+    name: 'Cobalto',
+    use: 'Aleaciones aeroespaciales, baterías de defensa',
+    dependency: 'Congo + refino chino',
+    dod: 'Contrato US$500M para stock nacional y alianzas EUA–Australia'
+  },
+  {
+    name: 'Tántalo',
+    use: 'Electrónica de precisión, sistemas EW',
+    dependency: 'Procesamiento concentrado en China',
+    dod: 'Compra acelerada US$100M + búsqueda de supply aliado'
+  },
+  {
+    name: 'Tungsteno',
+    use: 'Blindaje, perforación y municiones',
+    dependency: '70% extracción China',
+    dod: 'Programa Strategic Materials Reserve para reponer stock'
+  },
+  {
+    name: 'Escandio',
+    use: 'Aleaciones ligeras aeroespaciales',
+    dependency: 'Producción limitada global',
+    dod: 'Contratos piloto con productores estadounidenses y canadienses'
+  },
+  {
+    name: 'Tierras Raras (REE)',
+    use: 'F-35, radares, guiado y comunicaciones',
+    dependency: 'Refino 85% en China',
+    dod: 'DPA Title III financia separación y offtakes multi-país'
+  },
+  {
+    name: 'Grafito natural',
+    use: 'Ánodos de baterías y componentes electrónicos',
+    dependency: 'China domina >80%',
+    dod: 'Lista crítica USGS 2025; acuerdos con empresas aliadas'
+  },
+  {
+    name: 'Metales raros (arsénico, bismuto, galio, germanio, indio, ytrio)',
+    use: 'Óptica, chips RF, defensa contra interferencia',
+    dependency: 'Supply concentrado en China/Rusia',
+    dod: 'Nuevas compras vía International Security Supply Chain Initiative'
+  }
+];
+
 export const Slide04CompetitiveLandscape = {
   type: 'content',
-  title: 'Competitive Landscape',
-  subtitle: 'Swiss regulated digital asset managers and Mira Labs differentiation',
+  title: 'Minerales críticos priorizados',
+  subtitle: 'Qué busca el DOD y cómo se alinea el SPV',
   content: (
     <div className="space-y-8">
       <div className="border border-slate-200">
-        <div className="bg-slate-900 text-white px-6 py-4 flex items-center justify-between text-base">
+        <div className="bg-slate-900 text-white px-6 py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
           <div>
-            <h3 className="text-base uppercase tracking-wide font-semibold">Institutional Benchmarking</h3>
-            <p className="text-sm text-slate-300">Comparison across licensing, banking, performance, technology, and distribution</p>
+            <h3 className="text-base uppercase tracking-wide font-semibold">Lista activa de compras DOD (2025)</h3>
+            <p className="text-sm text-slate-300">Basado en ReporteMinero, Defense &amp; Munitions, Reuters, USGS</p>
           </div>
-          <div className="text-right text-sm text-slate-400 uppercase tracking-wide">Source: Company filings, press releases, industry research (2024)</div>
+          <div className="text-xs text-right text-slate-400 uppercase tracking-widest">Security &amp; Defense Supply Chain</div>
         </div>
         <div className="overflow-x-auto">
-          <table className="min-w-[880px] w-full text-sm md:text-base">
-            <thead className="bg-slate-50 text-slate-600 uppercase tracking-wide text-sm">
+          <table className="min-w-[900px] w-full text-sm md:text-base">
+            <thead className="bg-slate-50 text-slate-600 uppercase tracking-wide text-xs">
               <tr>
-                <th className="px-4 py-3 text-left font-semibold">Criteria</th>
-                <th className="px-4 py-3 text-center font-semibold text-slate-900">Mira Labs</th>
-                <th className="px-4 py-3 text-center font-semibold">Sygnum</th>
-                <th className="px-4 py-3 text-center font-semibold">Amina (SEBA)</th>
-                <th className="px-4 py-3 text-center font-semibold">Crypto Finance</th>
-                <th className="px-4 py-3 text-center font-semibold">Bitcoin Suisse</th>
+                <th className="px-4 py-3 text-left">Mineral</th>
+                <th className="px-4 py-3 text-left">Uso defensa</th>
+                <th className="px-4 py-3 text-left">Dependencia actual</th>
+                <th className="px-4 py-3 text-left">Acción DOD 2025</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">
-              <tr className="bg-blue-50">
-                <td className="px-4 py-3 font-semibold text-slate-900">Regulatory Status</td>
-                <td className="px-4 py-3 text-center font-semibold text-blue-700">FINMA AM license + CSSF SPV (Day 1)</td>
-                <td className="px-4 py-3 text-center">FINMA bank + securities dealer</td>
-                <td className="px-4 py-3 text-center">FINMA bank + wealth management</td>
-                <td className="px-4 py-3 text-center">FINMA broker-dealer</td>
-                <td className="px-4 py-3 text-center">VQF membership, banking license pending</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 font-semibold text-slate-900">Tier-1 Banking Relationships</td>
-                <td className="px-4 py-3 text-center text-blue-700 font-semibold">Established (LGT, VP Bank, Julius Bär)</td>
-                <td className="px-4 py-3 text-center">Julius Bär, ZKB</td>
-                <td className="px-4 py-3 text-center">Julius Bär, Hypothekarbank Lenzburg</td>
-                <td className="px-4 py-3 text-center">ZKB, Bank Frick</td>
-                <td className="px-4 py-3 text-center">Regional private banks</td>
-              </tr>
-              <tr className="bg-slate-50">
-                <td className="px-4 py-3 font-semibold text-slate-900">Track Record / AUM</td>
-                <td className="px-4 py-3 text-center text-blue-700 font-semibold">$72M immediate (~CHF 60M) + $20-30M LOIs</td>
-                <td className="px-4 py-3 text-center">$3.5B+ digital asset AUM</td>
-                <td className="px-4 py-3 text-center">$2.0B+ across wealth mandates</td>
-                <td className="px-4 py-3 text-center">$1.0B+ institutional clients</td>
-                <td className="px-4 py-3 text-center">$1.2B retail, institutional in pilot</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 font-semibold text-slate-900">Technology Stack</td>
-                <td className="px-4 py-3 text-center text-blue-700 font-semibold">FPGA-powered execution + SPV automation</td>
-                <td className="px-4 py-3 text-center">Bank-grade core banking</td>
-                <td className="px-4 py-3 text-center">Proprietary trading infrastructure</td>
-                <td className="px-4 py-3 text-center">Market-making and brokerage systems</td>
-                <td className="px-4 py-3 text-center">Retail-first trading platform</td>
-              </tr>
-              <tr className="bg-slate-50">
-                <td className="px-4 py-3 font-semibold text-slate-900">Distribution Focus</td>
-                <td className="px-4 py-3 text-center text-blue-700 font-semibold">Institutional SMA + bespoke funds</td>
-                <td className="px-4 py-3 text-center">Private banking & wealth platforms</td>
-                <td className="px-4 py-3 text-center">Ultra-HNWI & institutional</td>
-                <td className="px-4 py-3 text-center">Institutional brokerage</td>
-                <td className="px-4 py-3 text-center">Mass-affluent retail</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 font-semibold text-slate-900">Speed-to-Market</td>
-                <td className="px-4 py-3 text-center text-blue-700 font-semibold">Day 1 (acquisition)</td>
-                <td className="px-4 py-3 text-center">24-30 months build</td>
-                <td className="px-4 py-3 text-center">30+ months build</td>
-                <td className="px-4 py-3 text-center">36+ months build</td>
-                <td className="px-4 py-3 text-center">36+ months build</td>
-              </tr>
+              {minerals.map((row) => (
+                <tr key={row.name} className="bg-white">
+                  <td className="px-4 py-3 font-semibold text-slate-900">{row.name}</td>
+                  <td className="px-4 py-3 text-slate-700">{row.use}</td>
+                  <td className="px-4 py-3 text-slate-600">{row.dependency}</td>
+                  <td className="px-4 py-3 text-slate-600">{row.dod}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="border border-blue-200 bg-blue-50 p-6">
-          <div className="text-sm uppercase tracking-wide text-blue-700 font-semibold mb-3">Mira Labs Defensible Advantages</div>
-          <ul className="space-y-3 text-base text-blue-900">
-            <li>• License acquisition strategy delivers Swiss AM + Luxembourg SPV in weeks, compressing regulatory lead time by 18-24 months.</li>
-            <li>• Combination of TradFi track record and high-frequency infrastructure uncommon among Swiss incumbents.</li>
-            <li>• Platform architecture designed for bespoke SMA mandates, not retail ETPs—aligns with institutional demand for customization.</li>
-            <li>• Technology partnership optionality provides path to owning execution stack without upfront $15-20M capex.</li>
-          </ul>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-sm md:text-base text-slate-700">
+        <div className="border border-blue-200 bg-blue-50 p-5">
+          <div className="text-sm uppercase tracking-wide text-blue-700 font-semibold mb-2">Ventana geopolítica</div>
+          <p>El DOD reconoce que la dependencia externa es el mayor riesgo de seguridad nacional → financia proveedores aliados con contratos multianuales.</p>
         </div>
-        <div className="border border-slate-200 p-6">
-          <div className="text-sm uppercase tracking-wide text-slate-600 font-semibold mb-3">Barriers to Entry (18-36 Month Moat)</div>
-          <ul className="space-y-3 text-base text-slate-700">
-            <li>• FINMA authorization process (&lt;10% approval rate) plus AML/SRO requirements discourage new applications.</li>
-            <li>• Tier-1 Swiss banking partners require multi-year compliance history before extending digital asset services.</li>
-            <li>• Institutional LPs demand audited controls, SOC2 reporting, and operational DD—significant upfront investment.</li>
-            <li>• Track record expectations: new managers without 12-24 month live mandates struggle to attract institutional allocations.</li>
-          </ul>
+        <div className="border border-slate-200 bg-white p-5">
+          <div className="text-sm uppercase tracking-wide text-slate-600 font-semibold mb-2">Cómo encaja M&amp;N</div>
+          <p>Reservas en antimonio y grafito, permisos vigentes y CAPEX moderado permiten subir producción en 6-12 meses.</p>
         </div>
-      </div>
-      <div className="text-sm text-slate-500">
-        Sources: Company filings, FINMA registry, Bloomberg Intelligence digital asset management survey (October 2025).
+        <div className="border border-slate-200 bg-white p-5">
+          <div className="text-sm uppercase tracking-wide text-slate-600 font-semibold mb-2">Rol del SPV</div>
+          <p>Financia CAPEX/OPEX, fija garantías y activa reporting MiraLabs para cumplir estándares de Defense Production Act / Strategic Reserve.</p>
+        </div>
       </div>
     </div>
   )
