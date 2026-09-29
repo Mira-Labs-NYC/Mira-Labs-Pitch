@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# nested clone (own .git); was committed as an orphan gitlink
+mira-labs-pitch/
